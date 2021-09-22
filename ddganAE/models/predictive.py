@@ -34,7 +34,7 @@ class Predictive_adversarial:
     Predictive Adversarial Neural Network class
     """
 
-    def __init__(self, encoder, decoder, discriminator, optimizer):
+    def __init__(self, encoder, decoder, discriminator, optimizer, seed=None):
         """
         Constructor, create an instance of predictive adversarial neural
         network
@@ -51,6 +51,7 @@ class Predictive_adversarial:
         self.decoder = decoder
         self.discriminator = discriminator
         self.latent_dim = self.decoder.layers[0].input_shape[1]
+        self.seed = seed
 
         self.optimizer = optimizer
 
@@ -276,7 +277,7 @@ val_data, not both")
 
         if val_size > 0:
             x_train, x_val, y_train, y_val = train_test_split(
-                x_full, y_full, test_size=val_size)
+                x_full, y_full, test_size=val_size, random_state=self.seed)
         else:
             x_train, y_train = x_full, y_full
 
