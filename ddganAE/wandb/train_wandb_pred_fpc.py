@@ -471,7 +471,7 @@ Predictive_adversarial_sweep_config = {
         },
         "activation": {"values": ["relu", "elu", "sigmoid", "tanh"]},
         "discriminator_architecture": {"values": ["custom", "custom_wider"]},
-        "in_vars": {"values": [100]},
+        "in_vars": {"values": [10]},
         "dense_activation": {"values": ["relu", "linear"]},
         "batch_size": {"values": [32, 64, 128]},
         "learning_rate": {"values": [5e-3, 5e-4, 5e-5]},
@@ -482,7 +482,7 @@ Predictive_adversarial_sweep_config = {
         "batch_normalization": {"values": [True, False]},
         "regularization": {"values": [1e-3, 1e-4, 1e-5, 1e-6, 0]},
         "savemodel": {"values": [False]},
-        "latent_vars": {"values": [100, 300, 500]},
+        "latent_vars": {"values": [30, 60, 100, 300]},
         "interval": {"values": [1, 2, 4, 6]},
         "final_act": {
             "values": [
@@ -496,7 +496,7 @@ Predictive_adversarial_sweep_config = {
         "epochs": {"values": [200, 500, 1000, 2000]},
         "n_discriminator": {"values": [1, 2, 4, 5]},
         "n_gradient_ascent": {"values": [3, 8, 15, 30]},
-        "domains": {"values": [10]}
+        "domains": {"values": [4]}
     },
 }
 
@@ -517,7 +517,7 @@ Predictive_ae_sweep_config = {
             ]
         },
         "activation": {"values": ["relu", "elu", "sigmoid", "tanh"]},
-        "in_vars": {"values": [20]},
+        "in_vars": {"values": [10]},
         "dense_activation": {"values": ["relu", "linear"]},
         "batch_size": {"values": [32, 64, 128]},
         "learning_rate": {"values": [5e-3, 5e-4, 5e-5]},
@@ -540,7 +540,7 @@ Predictive_ae_sweep_config = {
         "noise_std": {"values": [0.00001, 0.001, 0.01, 0.05, 0.1]},
         "increment": {"values": [True, False]},
         "epochs": {"values": [100, 200, 500, 1000]},
-        "domains": {"values": [10]}
+        "domains": {"values": [4]}
     },
 }
 
