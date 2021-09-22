@@ -1,6 +1,6 @@
 #!/bin/bash
-#PBS -N wandb_run_pred_sf
-#PBS -o wandb_run_pred_sf.out
+#PBS -N wandb_run_pred_fpc
+#PBS -o wandb_run_pred_fpc.out
 #PBS -j oe
 #PBS -lselect=1:ncpus=4:mem=24gb:ngpus=1:gpu_type=RTX6000
 #PBS -lwalltime=24:00:00
