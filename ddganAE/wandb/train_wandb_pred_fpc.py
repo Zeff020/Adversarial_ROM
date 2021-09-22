@@ -30,8 +30,6 @@ from ddganAE.architectures.discriminators import (
     build_custom_discriminator,
     build_custom_wider_discriminator
 )
-from ddganAE.wandb.get_snapshots_3d_continuous import \
-     get_snapshots_3D
 import numpy as np
 
 __author__ = "Zef Wolffs"
