@@ -234,8 +234,8 @@ def train_wandb_pred_aae(config=None):
         init_values[1] = train_data[2][:, 0]
 
         predicted = pred_adv.predict(boundaries, init_values,
-                                     int(nfiles/config.interval)-1, iters=5)
-        train_data_int = train_data[1:3, :, ::config.interval]
+                                     int(nfiles/config.interval)-1, iters=3)
+        train_data_int = train_data[:, :, ::config.interval]
 
         mse = tf.keras.losses.MeanSquaredError()
         mse_pred = mse(predicted[:, :, :int(nfiles/config.interval)-2],
@@ -435,8 +435,8 @@ def train_wandb_pred_ae(config=None):
         init_values[1] = train_data[2][:, 0]
 
         predicted = pred_adv.predict(boundaries, init_values,
-                                     int(nfiles/config.interval)-1, iters=5)
-        train_data_int = train_data[1:3, :, ::config.interval]
+                                     int(nfiles/config.interval)-1, iters=3)
+        train_data_int = train_data[:, :, ::config.interval]
 
         mse = tf.keras.losses.MeanSquaredError()
         mse_pred = mse(predicted[:, :, :int(nfiles/config.interval)-2],
@@ -493,7 +493,7 @@ Predictive_adversarial_sweep_config = {
         },
         "noise_std": {"values": [0.00001, 0.001, 0.01, 0.05, 0.1]},
         "increment": {"values": [True, False]},
-        "epochs": {"values": [200, 500, 1000, 2000]},
+        "epochs": {"values": [100, 200, 500, 1000]},
         "n_discriminator": {"values": [1, 2, 4, 5]},
         "n_gradient_ascent": {"values": [3, 8, 15, 30]},
         "domains": {"values": [4]}
